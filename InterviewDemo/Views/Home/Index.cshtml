@@ -1,0 +1,26 @@
+﻿@model InterviewDemo.Models.SearchModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Interview Demo</h1>
+    <p class="lead">Application searches users from a list of Git users, using their ID. If no users found for the search criteria application returns all users in the data store.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Git Users Search</h2>
+        <p>
+            
+            @using (Html.BeginForm())
+            {
+               @Html.TextBoxFor(s => s.SearchName)
+                @Html.ValidationMessageFor(s => s.SearchName)
+               <input type="submit" value="Submit" />
+            }
+
+            Search Git using a name.
+        </p>
+    </div>
+</div>

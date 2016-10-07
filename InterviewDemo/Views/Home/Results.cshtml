@@ -1,0 +1,113 @@
+﻿@model List<InterviewDemo.Controllers.GitUsers>
+
+@{
+    ViewBag.Title = "Results";
+}
+
+<h2>Results</h2>
+
+<div>
+    <h4>GitUsers</h4>
+    <hr />
+    @if (Model.Any())
+    {
+        <dl class="dl-horizontal">
+            @foreach (var user in Model)
+            {
+                <dt>
+                    ID:
+                </dt>
+
+                <dd>
+                    @user.id
+                </dd>
+                <dt>
+                    Position Title
+                </dt>
+
+                <dd>
+                    @user.position_title
+                </dd>
+
+                <dt>
+                    Organization Name
+                </dt>
+
+                <dd>
+                    @user.organization_name
+                </dd>
+
+                <dt>
+                    Rate Interval Code
+                </dt>
+
+                <dd>
+                    @user.rate_interval_code
+                </dd>
+
+                <dt>
+                    Minimum
+                </dt>
+
+                <dd>
+                    @user.minimum
+                </dd>
+
+                <dt>
+                    Maximum
+                </dt>
+
+                <dd>
+                    @user.maximum
+                </dd>
+
+                <dt>
+                    Start Date
+                </dt>
+
+                <dd>
+                    @user.start_date
+                </dd>
+
+                <dt>
+                    End Date
+                </dt>
+
+                <dd>
+                    @user.end_date
+                </dd>
+
+                <dt>
+                    Url
+                </dt>
+
+                <dd>
+                    @user.url
+                </dd>
+
+                <dt>
+                    Locations
+                </dt>
+
+                <dd>
+
+                    @foreach (var loc in user.locations)
+                    {
+                        <b>@loc</b>
+                    }
+                </dd>
+            }
+
+
+        </dl>
+    }
+    else
+    {
+        <p>No results found for the search</p>
+    }
+   
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")*@
+</p>

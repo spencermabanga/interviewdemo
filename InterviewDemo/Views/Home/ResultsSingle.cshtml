@@ -1,0 +1,94 @@
+﻿@model InterviewDemo.Controllers.GitUsers
+
+@{
+    ViewBag.Title = "ResultsSingle";
+}
+
+<h2>ResultsSingle</h2>
+
+<div>
+    <h4>GitUsers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.position_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.position_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.organization_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organization_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rate_interval_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rate_interval_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.minimum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.minimum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maximum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maximum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.start_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.start_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.end_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.end_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.url)
+        </dd>
+        
+        <dt>
+            Locations
+        </dt>
+
+        <dd>
+            
+            @foreach (var loc in Model.locations)
+            {
+                <b>@loc</b>
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
